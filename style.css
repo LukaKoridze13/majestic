@@ -107,6 +107,7 @@ header {
   row-gap: 12px;
   width: 100vw;
   margin-top: 36px;
+  padding-inline: 16px;
 }
 
 .modal {
@@ -174,6 +175,17 @@ input {
 
 a {
   text-decoration: none;
+}
+.button {
+  width: 100%;
+  padding: 24px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #90f1ef 0%, #c6f9a8 100%);
+  border: none;
+
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .agree {
