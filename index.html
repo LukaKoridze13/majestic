@@ -50,10 +50,63 @@
           <p class="app-body">Body text below goes here</p>
         </div>
       </div>
-      <div id="buttons">
-        <button class="button">Button Text</button>
-        <button class="button">Button Text</button>
-        <button class="button">Button Text</button>
+      <div class="buttons">
+        <button class="main-button green open-withdraw">Withdraw</button>
+        <button class="main-button red open-lock">Lock App</button>
+        <button class="main-button green open-unlock">Unlock App</button>
+        <button class="main-button red open-delete">Delete</button>
+      </div>
+    </div>
+    <div id="withdraw-modal" class="modal">
+      <div class="box">
+        <img class="close-modal" src="./assets/cross.png" />
+        <h3>Withdraw</h3>
+        <input type="text" placeholder="Your BTC wallet address" />
+        <button id="withdraw" class="secondary-button green submit">
+          Withdraw
+        </button>
+      </div>
+    </div>
+    <div id="lock-modal" class="modal">
+      <div class="box">
+        <img class="close-modal" src="./assets/cross.png" />
+        <h3>Password Image</h3>
+        <img class="lock preview" src="./assets/password.jpg" />
+        <input type="file" id="image" hidden />
+        <a
+          download
+          href="./assets/password.jpg"
+          class="secondary-button red submit"
+        >
+          Download
+        </a>
+        <button id="lock" class="secondary-button green submit">Lock</button>
+      </div>
+    </div>
+    <div id="unlock-modal" class="modal">
+      <div class="box">
+        <img class="close-modal" src="./assets/cross.png" />
+        <h3>Upload image</h3>
+        <img class="unlock preview" src="" />
+        <input type="file" id="image" hidden />
+        <label for="image" class="secondary-button red submit choose">
+          Choose file
+        </label>
+        <button id="unlock" class="secondary-button green submit">
+          Unlock
+        </button>
+      </div>
+    </div>
+    <div id="delete-modal" class="modal">
+      <div class="box">
+        <img class="close-modal" src="./assets/cross.png" />
+        <h3>Delete account</h3>
+        <div class="agree secondary-button green">
+          <input id="agree" type="checkbox" />
+          <label class="checkbox" for="agree">Delete all data</label>
+        </div>
+
+        <button id="delete" class="secondary-button red submit">Delete</button>
       </div>
     </div>
     <script src="./main.js"></script>
