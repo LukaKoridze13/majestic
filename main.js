@@ -1,36 +1,3 @@
-const videos = document.querySelectorAll(".app");
-
-videoController();
-
-window.addEventListener("scroll", videoController);
-
-function videoController() {
-  videos.forEach((video) => {
-    if (isCenterInViewport(video)) {
-      video.children[0].children[0].play();
-    } else {
-      video.children[0].children[0].pause();
-    }
-  });
-}
-
-function isCenterInViewport(element) {
-  const elementRect = element.getBoundingClientRect();
-  const elementCenter = (elementRect.top + elementRect.bottom) / 2;
-  const viewportHeight = window.innerHeight;
-
-  return elementCenter >= 0 && elementCenter <= viewportHeight;
-}
-
-const closeButtons = document.querySelectorAll(".modal .close-modal");
-closeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = button.closest(".modal");
-    if (modal) {
-      modal.style.display = "none";
-    }
-  });
-});
 // withdraw
 const modal_withdraw = document.getElementById("withdraw-modal");
 const open_withdraw = document.querySelector(".open-withdraw");
@@ -77,6 +44,9 @@ function assignOpenModal(modal, opener) {
 function assignCloseModal(modal, closer) {
   closer.addEventListener("click", () => {
     modal.style.display = "none";
+    document.getElementById("container").style.height = "auto";
+    document.getElementById("container").style.overflow = "auto";
+    open_delete.scrollIntoView();
   });
 }
 function handleFileInput(event) {
@@ -87,3 +57,40 @@ function handleFileInput(event) {
     label_unlock.textContent = "Upload again";
   }
 }
+
+const videos = document.querySelectorAll(".app");
+
+videoController();
+
+window.addEventListener("scroll", videoController);
+
+function videoController() {
+  videos.forEach((video) => {
+    if (isCenterInViewport(video)) {
+      video.children[0].children[0].play();
+    } else {
+      video.children[0].children[0].pause();
+    }
+  });
+}
+
+function isCenterInViewport(element) {
+  const elementRect = element.getBoundingClientRect();
+  const elementCenter = (elementRect.top + elementRect.bottom) / 2;
+  const viewportHeight = window.innerHeight;
+
+  return elementCenter >= 0 && elementCenter <= viewportHeight;
+}
+
+const closeButtons = document.querySelectorAll(".modal .close-modal");
+closeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest(".modal");
+    if (modal) {
+      modal.style.display = "none";
+      document.getElementById("container").style.height = "auto";
+      document.getElementById("container").style.overflow = "auto";
+      open_delete.scrollIntoView();
+    }
+  });
+});
